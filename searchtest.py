@@ -8,7 +8,7 @@ class SearchTests(unittest.TestCase):
 		driver = self.driver
 		driver.implicitly_wait(30)
 		driver.maximize_window()
-		driver.get("http://demo.onestepcheckout.com")
+		driver.get("http://demo-store.seleniumacademy.com/")
 
 	def test_search_tee(self):
 		driver = self.driver
