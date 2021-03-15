@@ -21,4 +21,4 @@ kwargs = {
 runner = HTMLTestRunner(**kwargs)
 
 #corro el rurner con la suite de prueba
-runner.run(smoke_test) 
+runner.run(smoke_test)
