@@ -12,24 +12,24 @@ class LanguajeOption(unittest.TestCase):
 		driver.get("http://demo-store.seleniumacademy.com/")
 	
 	def test_select_languaje(self):
-        exp_options = ['English', 'French', 'German']
-        act_options= []
-        select_languaje= Select(self.driver.find_element_by_id('select-languaje'))
-        self.assertEqual(3,len(select_languaje))
+		exp_options = ['English', 'French', 'German']
+		act_options= []
+		select_languaje= Select(self.driver.find_element_by_id('select-language'))
+		self.assertEqual(3,len(select_languaje))
 
-        for option in select_languaje:
-            act_options.append(option.text)
-        
-        self.assertListEqual(exp_options,act_options)
+		for option in select_languaje:
+			act_options.append(option.text)
+		
+		self.assertListEqual(exp_options,act_options)
 
-        self.assertEqual('English',select_languaje.first_selected_option.text)
+		self.assertEqual('English',select_languaje.first_selected_option.text)
 
-        select_languaje.select_by_visible_text('German')
+		select_languaje.select_by_visible_text('German')
 
-        self.assertTrue('store=german' in self.driver.current_url)
+		self.assertTrue('store=german' in self.driver.current_url)
 
-        select_languaje =  Select(self.driver.find_element_by_id('select-languaje'))
-        select_languaje.select_by_index(0)
+		select_languaje =  Select(self.driver.find_element_by_id('select-language'))
+		select_languaje.select_by_index(0)
 
 
 	def tearDown(self):
